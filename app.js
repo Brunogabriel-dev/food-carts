@@ -50,3 +50,14 @@ let products = [
     price: 17000
   },
 ];
+let listCards = [];
+function initApp(){
+  products.forEach((value,key)=>{
+    let newDiv = document.createElement('div');
+    newDiv.innerHTML = `
+    <img src="image/${value.image}"/>
+    `;
+    list.appendChild(newDiv);
+  })
+}
+initApp();
