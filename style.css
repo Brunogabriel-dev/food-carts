@@ -83,3 +83,7 @@ header .shopping span{
 .active .container{
   transform: translateX(-200px);
 }
+.list .item{
+  text-align: center;
+  background-color: #dce0e1;
+}
