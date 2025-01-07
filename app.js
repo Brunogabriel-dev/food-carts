@@ -65,3 +65,21 @@ function initApp(){
   })
 }
 initApp();
+function addToCard(key){
+  if(listCards[key] == null){
+    listCards[key] = products[key];
+    listCards[key].quantity = 1;
+  }
+  reloadCard();
+}
+function reloadCard(){
+  listCard.innerHTML = '';
+  let count = 0;
+  let totalPrice = 0;
+  listCards.forEach((value, key) => {
+    totalPrice = totalPrice + value.price;
+    count = count + value.quantity;
+  })
+  total.innerText = totalPrice.toLocaleString();
+  quantity.innerText = count;
+}
