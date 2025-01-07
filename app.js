@@ -79,6 +79,16 @@ function reloadCard(){
   listCards.forEach((value, key) => {
     totalPrice = totalPrice + value.price;
     count = count + value.quantity;
+
+    if(value != null){
+      let newDiv = document.createElement('li');
+      newDiv.innerHTML = ` 
+        <div><img src="image/${value.image}"/></div>
+        <div>${value.name}</div>
+        <div>${value.quantity}</div>
+      `;
+      listCard.appendChild(newDiv);
+    }
   })
   total.innerText = totalPrice.toLocaleString();
   quantity.innerText = count;
